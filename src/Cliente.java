@@ -1,18 +1,17 @@
 import java.util.Random;
 
 public class Cliente {
-    String nome;
-    int idade;
-    char sexo;
-    String cpf = gerarCPF();
-    public Cliente(String nome, int idade, char i) {
+    private String nome;
+    private int idade;
+    private char sexo;
+    private String cpf;
+
+    public Cliente(String nome, int idade, char sexo) {
         this.nome = nome;
         this.idade = idade;
-        this.sexo = i;
+        this.sexo = sexo;
         this.cpf = gerarCPF();
     }
-    
-   
 
     public static String gerarCPF() {
         Random random = new Random();
@@ -25,5 +24,10 @@ public class Cliente {
         }
 
         return cpf;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", cpf=" + cpf + "]";
     }
 }

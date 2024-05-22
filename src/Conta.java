@@ -2,26 +2,41 @@ public class Conta {
     private long agencia;
     private Cliente cliente;
     private double saldo;
-    private String nome;
 
-    public Conta(long agencia, Cliente cliente, String nome) {
+    public Conta(long agencia, Cliente cliente) {
         this.agencia = agencia;
         this.cliente = cliente;
-        this.nome = nome;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 
     public double sacar(double valor){
-        return this.saldo-=valor;
+        if (saldo >= valor) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente para saque");
+        }
+        return saldo;
     }
 
     public double depositar(double valor){
-        return this.saldo+= valor;
+        saldo += valor;
+        return saldo;
     }
 
-    public void tranferencia(double valor,Conta contarecebida){
-        this.sacar(valor);
-        contarecebida.depositar(valor);
+    public void tranferencia(double valor, Conta contaRecebida){
+        if (saldo >= valor) {
+            sacar(valor);
+            contaRecebida.depositar(valor);
+        } else {
+            System.out.println("Saldo insuficiente para transferência");
+        }
     }
 
-    
+    @Override
+    public String toString() {
+        return "Conta [agencia=" + agencia + ", cliente=" + cliente + ", saldo=" + saldo + "]";
+    }
 }
