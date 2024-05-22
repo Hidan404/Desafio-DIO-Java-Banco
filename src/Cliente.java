@@ -28,6 +28,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente [nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + ", cpf=" + cpf + "]";
+        return "Cliente nome: " + nome + ", idade: " + idade + ", sexo: " + sexo + ", cpf: " + cpf;
     }
 }

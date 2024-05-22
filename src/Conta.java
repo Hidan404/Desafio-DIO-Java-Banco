@@ -31,12 +31,12 @@ public class Conta {
             sacar(valor);
             contaRecebida.depositar(valor);
         } else {
-            System.out.println("Saldo insuficiente para transferência");
+            throw new RuntimeException("Saldo insuficiente para executar esta transação");
         }
     }
 
     @Override
     public String toString() {
-        return "Conta [agencia=" + agencia + ", cliente=" + cliente + ", saldo=" + saldo + "]";
+        return "Conta agencia: " + agencia + ", cliente: " + cliente + ", saldo: " + saldo;
     }
 }

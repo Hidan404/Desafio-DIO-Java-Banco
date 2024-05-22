@@ -24,6 +24,6 @@ public class Banco {
 
     @Override
     public String toString() {
-        return "Banco [nome=" + nome + ", CNPJ=" + CNPJ + "]";
+        return "Banco nome: " + nome + ", CNPJ: " + CNPJ;
     }
 }
