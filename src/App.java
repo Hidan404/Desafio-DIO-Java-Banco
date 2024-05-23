@@ -5,8 +5,13 @@ public class App {
         
         Conta contaCorrente = new ContaCorrente(456789, ronald);
         contaCorrente.depositar(500);
+        contaCorrente.sacar(250);
+        contaCorrente.sacar(270);
         banco.adicionarConta(contaCorrente);
         banco.imprimirContas();
         System.out.println( banco.toString());
+
+
+
     }
 }
